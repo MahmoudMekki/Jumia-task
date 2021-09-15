@@ -8,14 +8,14 @@ type CustomerPhonesRepo interface {
 }
 
 func NewCustomerPhonesRepo() CustomerPhonesRepo {
-	return &customerPonesImp{}
+	return &customerPhonesImp{}
 }
 
-type customerPonesImp struct {
+type customerPhonesImp struct {
 }
 
 /*GetCustomerPhoneDetails for response*/
-func (c customerPonesImp) GetCustomerPhoneDetails(info model.CustomerInfo, phone model.Phone, valid bool, number string) (customerPhone model.CustomerPhones) {
+func (c customerPhonesImp) GetCustomerPhoneDetails(info model.CustomerInfo, phone model.Phone, valid bool, number string) (customerPhone model.CustomerPhones) {
 	if valid {
 		customerPhone.State = model.NumberOKState
 	} else {
