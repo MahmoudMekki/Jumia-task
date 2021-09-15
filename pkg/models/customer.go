@@ -4,12 +4,14 @@ const (
 	CustomersTableName = "customer"
 )
 
-type CutomerInfo struct {
+// CutomerInfo /*CustomerInfo model for the customer table*/
+type CustomerInfo struct {
 	ID    int32  `gorm:"column:id"`
 	Name  string `gorm:"column:name"`
 	Phone string `gorm:"column:phone"`
 }
 
-func (c CutomerInfo) TableName() string {
+/*returns TableName for Gorm*/
+func (c CustomerInfo) TableName() string {
 	return CustomersTableName
 }

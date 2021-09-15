@@ -1,11 +1,14 @@
 package model
 
-const(
-	PaginationFilterByCountry ="country"
+const (
+	PaginationFilterByCountry = "country"
 )
 
-type Pagination struct{
-	FilterBy 	string
-	Limit  		uint32
-	Page   		uint32
+/*Pagination model for pagination
+FilterBy could be by  countries or state (Nok , ok)
+*/
+type Pagination struct {
+	FilterBy string
+	Limit    uint32
+	Page     uint32
 }
