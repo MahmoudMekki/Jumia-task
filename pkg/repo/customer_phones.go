@@ -2,6 +2,7 @@ package repo
 
 import model "jumia-task/pkg/models"
 
+/*CustomerPhonesRepo Holds everything related to the response pattern*/
 type CustomerPhonesRepo interface {
 	GetCustomerPhoneDetails(info model.CutomerInfo,phone model.Phone,valid bool,number string)(customerPhone model.CustomerPhones)
 }
