@@ -21,9 +21,8 @@ func init(){
 
 
 func main(){
-	r := mux.NewRouter()
-	r.HandleFunc("/customers",newService.GetAllCustomerPhones).Methods(http.MethodGet)
-	r.HandleFunc("/countries",newService.GetAllAvailableCountriesForPagination).Methods(http.MethodGet)
-	r.HandleFunc("/customers-pagination",newService.GetCustomerPhonesByPagination).Methods(http.MethodPost)
-	log.Panic(http.ListenAndServe("localhost:8500",r))
+	newService.Router =mux.NewRouter()
+	newService.InitRoutes()
+	log.Print("http: --> start listening on host:localhost and port:8500")
+	log.Panic(http.ListenAndServe("localhost:8500",newService.Router))
 }
